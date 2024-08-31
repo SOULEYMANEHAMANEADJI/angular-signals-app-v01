@@ -1,27 +1,50 @@
-# AngularSignalsApp
+# Angular Signals App V01
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.1.
+Une application Angular utilisant des **Signals** pour une gestion réactive fine des produits.
 
-## Development server
+## Prérequis
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Node.js et npm installés
+- Angular CLI installé (`npm install -g @angular/cli`)
 
-## Code scaffolding
+## Installation
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. Cloner le dépôt ou télécharger le projet.
+2. Installer les dépendances Angular :
+   ```bash
+   npm install
+   ```
+3. Ajouter Bootstrap avec Angular :
+   ```bash
+   ng add @ng-bootstrap/ng-bootstrap
+   ```
 
-## Build
+## Démarrage de l'application
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Pour démarrer l'application, exécutez la commande suivante :
 
-## Running unit tests
+```bash
+ng serve
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Structure du Projet
 
-## Running end-to-end tests
+- **components/** : Contient les composants Angular tels que `product`, `products`, `add-product`, `dash-board`, etc.
+- **services/** : Contient le service `product.service.ts` pour la gestion des produits.
+- **models/** : Contient les modèles de données, par exemple, `product.models.ts`.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Composants Principaux
 
-## Further help
+- **AddProductComponent** : Formulaire pour ajouter un produit avec validation des champs.
+- **DashBoardComponent** : Vue de tableau de bord affichant des statistiques sur les produits.
+- **ProductComponent** : Composant gérant l'affichage d'un produit individuel.
+- **ProductsComponent** : Affiche la liste des produits et permet de les sélectionner.
+- **ProductsListComponent** : Affiche la liste des produits avec des fonctionnalités telles que la suppression et la sélection.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Utilisation des Signals
+
+Le projet utilise les **Angular Signals** pour une gestion fine et réactive des données, optimisant les calculs dépendants des modifications de l'état.
+
+## Auteurs
+
+Créé par Mine HAS.
