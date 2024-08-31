@@ -1,0 +1,15 @@
+<div class="row justify-content-center">
+  <div class="p-3 col-6">
+    <u class="list-group">
+      <li class="list-group-item">Price : {{ price }}</li>
+      <li class="list-group-item">
+        Quantity : {{ quantity() }}
+        <div class="float-end">
+          <button type="submit" class="btn btn-outline-danger btn-sm m-1" (click)="decrement()">-</button>
+          <button type="submit" class="btn btn-outline-success btn-sm m-1" (click)="increment()">+</button>
+        </div>
+      </li>
+      <li class="list-group-item">Total : {{ total() }}</li>
+    </u>
+  </div>
+</div>

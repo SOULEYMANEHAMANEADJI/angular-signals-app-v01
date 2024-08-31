@@ -1,0 +1,75 @@
+@if (products().length !== 0){
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow">
+        <div class="card-header">
+          <div class="row">
+            <div class="col-3">
+                <span class="float-start fw-bold mt-2">List of Products</span>
+            </div>
+            <div class="col-9">
+              <ul class="nav nav-pills float-end d-flex">
+                <li class="p-2 ms-1 btn btn-outline-info btn-sm">Number of Products = {{ numberProducts() }}</li>
+                <li class="p-2 ms-1 btn btn-outline-info btn-sm">Total Amount = ${{ totalAmount() }}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+              <table class="table table-hover table-striped table-dark">
+                <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Price</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                  @for (product of products(); track product.id){
+                    <tr>
+                      <td>{{ product.id }}</td>
+                      <td>{{ product.name | uppercase }}</td>
+                      <td>${{ product.price }}</td>
+                      <td>
+                        @if (product.selected){
+                          <button type="submit" class="btn btn-outline-success btn-sm" (click)="selected(product)">Selected</button>
+                        } @else {
+                          <button type="submit" class="btn btn-outline-secondary btn-sm" (click)="selected(product)">Not Selected</button>
+                        }
+                      </td>
+                      <td>
+                        <button type="button" class="btn btn-outline-danger btn-sm" (click)="openDeleteModal(product, deleteModal)">Delete</button>
+                      </td>
+                    </tr>
+                  }
+                </tbody>
+              </table>
+            <!-- <p class="text-center fw-bold fst-italic text-danger mt-3">No Data Available Now !</p> -->
+          </div>
+        </div>
+        <div class="card-footer text-center fw-bold fst-italic text-info">
+          My Footer loading ...
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal de suppression -->
+  <ng-template #deleteModal let-modal>
+    <div class="modal-header">
+      <h5 class="modal-title">Delete Product</h5>
+      <button type="button" class="btn-close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+      <p>Are you sure you want to delete this product ?</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" (click)="modal.dismiss('Cross click')">Close</button>
+      <button type="button" class="btn btn-danger" (click)="deleteProduct()">Delete</button>
+    </div>
+  </ng-template>
+</div>
+}

@@ -1,0 +1,24 @@
+@if (selectedProductCount()){
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            <div class="row">
+              <div class="col-6">
+                <span class="float-start fw-bold text-success mt-2">Dashboard Details Product buying</span>
+              </div>
+              <div class="col-6">
+                <ul class="nav nav-pills float-end">
+                    <li class="p-2 ms-1 btn btn-outline-info btn-sm">Selected Products = {{ selectedProductCount() }}</li>
+                    <li class="p-2 ms-1 btn btn-outline-info btn-sm">Total = ${{ totalPricesSelectedProducts() }}</li>
+                    <!-- <li class="p-2 ms-1 btn btn-outline-danger btn-sm fw-bold">No Products Selected Now !</li> -->
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+}
